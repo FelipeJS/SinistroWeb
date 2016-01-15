@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html> 
+<head> 
+ <title>Dynamic Web TWAIN User Guide Demo</title> 
+</head> 
+<body> 
+<input type="button" value="Scan" onclick="Simple_AcquireImage();" /> 
+ 
+<div id="dwtcontrolContainer"></div> 
+ 
+<script src="Scripts/dynamsoft.webtwain.initiate.js"></script> 
+ 
+<script type="text/javascript" language="javascript">
+    var gWebTwain;
+    var _dwtParam = {
+        'productKey': '', /* please input your product key here. How to Generate Product Key>> 
+*/
+        'containerID': 'dwtcontrolContainer', /* the container's id. */
+        'isTrial': 'true', /* true for a trial license. */
+        'version': '9,2', /* The version of Dynamic Web TWAIN. */
+        'resourcesPath': 'Resources', /* The relative path of MSI, CAB and PKG. */
+        'width': 440,
+        'height': 600
+    };
+    (function () {
+        gWebTwain = new Dynamsoft.WebTwain(_dwtParam); /* create a Dynamic Web TWAIN object */
+    })(); 
+
+    function Simple_AcquireImage() { 
+        var DWObject = gWebTwain.getInstance(); 
+ 
+        if(DWObject) { 
+             DWObject.BrokerProcessType = 1; /* use a separate process for document scanning */ 
+             DWObject.SelectSource(); 
+             DWObject.CloseSource();
+             DWObject.OpenSource();
+             DWObject.IfShowUI = false;
+             DWObject.AcquireImage();
+        }
+    }
+</script> 
+</body>
+</html>

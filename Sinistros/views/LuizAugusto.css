@@ -1,0 +1,77 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p, label, td, input, button{
+	font-family: Arial, Helvetica, Sanserif;
+}
+td{
+	color: #777;
+}
+table{
+	margin-bottom: 10px;
+}
+.container{
+	width: 86%;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 30px;
+    box-shadow: 1px 1px 1px 1px #ddd;
+}
+.conteudo_topo{
+	border-bottom:1px solid #ccc;
+	margin-bottom: 10px;	
+}
+.conteudo_fm{
+	border-bottom:1px solid #ccc;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+.titulo{
+	width: 300px;
+	margin: 0 auto;
+	height: 50px;
+	padding-top: 20px;
+}
+.titulo h3{
+	color:#555;
+}
+.option{
+	padding-left: 27px;
+}
+.form_control{
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.btn{
+	color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

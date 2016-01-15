@@ -1,0 +1,46 @@
+﻿@media only screen and (max-width: 1024px) {
+    #container {
+        width: 100%; 
+        font-size:80%;
+        min-height:100%;
+        xxbackground-image: url("http://wallpaper.ultradownloads.com.br/119685_Papel-de-Parede-Apple-Azul-Claro_1440x900.jpg");
+        border-spacing: 10px;
+        padding: 20px;
+        border-collapse: separate;
+    }
+
+    label{
+        text-align:center;
+        color:white;
+        font-family:Arial;
+        font-size:1em;
+        font-weight:bolder;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    body {background-color: #dedbdb; }
+
+    #container {
+        font-size:80%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height:100%;
+        width: 70%;
+        xxbackground-image: url("http://wallpaper.ultradownloads.com.br/119685_Papel-de-Parede-Apple-Azul-Claro_1440x900.jpg");
+        border: 1px solid #808080;
+        border-radius:3px;
+        border-spacing: 10px;
+        padding: 10px;
+        border-collapse: separate;
+    }
+
+    label{
+        text-align:center;
+        font-family:Tahoma;
+        font-weight:bolder;
+        font-size:1.1em;
+    }
+
+}
+

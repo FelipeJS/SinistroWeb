@@ -1,0 +1,58 @@
+﻿@media only screen and (max-width: 1024px) {
+    body {background-image: url("http://wallpaper.ultradownloads.com.br/119685_Papel-de-Parede-Apple-Azul-Claro_1440x900.jpg");}
+    label{text-align:center; font-family:Arial; font-size:0.9em; font-weight:bolder;}
+    #container {width: 98%; font-size:0.8em; margin-left:2.7px;}
+    #mesAtual{border: 2px solid #92e5f7; border-radius:5px;background-color:#eefff9;}
+    #PorPrograma{border: 2px solid #92e5f7; border-radius:5px;background-color:#eefff9;}
+    #sinistrosGrid{border: 2px solid #92e5f7; border-radius:5px;background-color:#eefff9;}
+    .navigation-bar{border: 1px solid #eefff9; font-size:90%; border-radius:5px;}
+    
+}
+
+@media only screen and (min-width: 1025px) {
+    body {background-color: #dedbdb; }
+    label{text-align:center; font-family:Arial; font-size:0.9em; font-weight:bolder;}
+    .navigation-bar{border: 1px solid #eefff9; border-radius:5px;}
+    #menu{width:99.1%;height:4.3em; margin-left:4px;}
+
+    #container {
+        font-size:80%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height:113%;
+        width: 70%;
+        background-image: url("http://wallpaper.ultradownloads.com.br/119685_Papel-de-Parede-Apple-Azul-Claro_1440x900.jpg");
+        border: 1px solid #d8d3d3;
+        border-radius:2px;
+    }
+
+    #mesAtual{
+        border: 2px solid #92e5f7;
+        width:30%;
+        float:left;
+        margin-left:5px;
+        margin-top:30px;
+        border-radius:5px;
+        background-color:#f5fffb;
+    }
+
+    #PorPrograma{
+        border: 2px solid #92e5f7;
+        width:30%;
+        float:right;
+        margin-right:5px;
+        margin-top:15px;
+        border-radius:5px;
+        background-color:#f5fffb;
+    }
+
+    #sinistrosGrid{
+        border: 2px solid #92e5f7;
+        width:30%;
+        float:right;
+        margin-right:30px;
+        border-radius:5px;
+        background-color:#f5fffb;
+    }
+}
+

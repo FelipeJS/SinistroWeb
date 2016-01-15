@@ -1,0 +1,531 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+    <title>..:: SEA ::..</title>
+
+    <link type="text/css" href="/Content/css/menu.css" rel="stylesheet" />
+    <link type="text/css" href="/Content/css/grid.css" rel="stylesheet" />
+    <link type="text/css" href="/Content/css/main.css" rel="stylesheet" />
+    <link type="text/css" href="/Content/css/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
+    <link type="text/css" href="/Content/css/wizard.css" rel="stylesheet" />    
+    <link type="text/css" href="/Content/css/wizard.css" rel="stylesheet" />    
+    <link type="text/css" href="/Content/css/fileupload.main.css" rel="stylesheet" />
+    <link type="text/css" href="/Content/css/jquery.fileupload-ui.css" rel="stylesheet" />
+
+    <!--[if IE 7]>
+        <style type='text/css'>
+            #textTop h2 {
+                            display: block;
+                            margin: 23px auto;
+                        }
+        </style>    
+   <![endif]-->
+
+    <script src="/Scripts/jquery/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery.wizard.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery-percent.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery-blockUI.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery.notice.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery.qtip.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery-ui-1.9.1.custom.js" type="text/javascript"></script> 
+    <script src="/Scripts/jquery/jquery-timerpicker.js" type="text/javascript"></script>       
+    <script src="/Scripts/jquery/jquery.form.json.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery-manager-error.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery.decimalMask.js" type="text/javascript"></script>
+    <script src="/Scripts/grid.js" type="text/javascript"></script>
+    <script src="/Scripts/json2.js" type="text/javascript"></script>
+    <script src="/Scripts/menu.js" type="text/javascript"></script>
+    <script src="/Scripts/commons.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery/jquery.maskedinput-1.2.2.js" type="text/javascript"></script>
+    
+
+    <script src="/Scripts/FileUpload/tmpl.min.js" type="text/javascript"></script>
+    <script src="/Scripts/FileUpload/canvas-to-blob.min.js" type="text/javascript"></script>
+    <script src="/Scripts/FileUpload/load-image.min.js" type="text/javascript"></script>
+    <script src="/Scripts/FileUpload/jquery.iframe-transport.js" type="text/javascript"></script>
+    <script src="/Scripts/FileUpload/jquery.fileupload.js" type="text/javascript"></script>
+    <script src="/Scripts/FileUpload/jquery.fileupload-ip.js" type="text/javascript"></script>
+    <script src="/Scripts/FileUpload/jquery.fileupload-ui.js" type="text/javascript" charset="ISO88591"></script>
+    <script src="/Scripts/FileUpload/main.js" type="text/javascript"></script>
+    <script src="/Scripts/FileUpload/locale.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ajaxStart(function () {
+            $.blockUI({ overlayCSS: { opacity: .2 }, message: '<img src="/Content/images/main/loading.gif") />' });
+        }).ajaxStop($.unblockUI);
+
+    </script>
+    
+   
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            rangeDatepickerBR('#DtEmissaoInicial', '#DtEmissaoFinal');
+
+            $('#btnPesquisar').button({
+                icons: {
+                    primary: "ui-icon-search"
+                },
+                text: true
+            })
+            .click(function () {
+                Preenchergrid(1);
+            });
+
+            $('#btnExcluir').button({
+                icons: {
+                    primary: "ui-icon-trash"
+                },
+                text: true
+            }).click(function () {
+                ExcluirApolice();
+            });
+
+            $('#btnNovaApolice').button({
+                icons: {
+                    primary: "ui-icon-document"
+                },
+                text: true
+            })
+            .click(function () {
+                window.location = 'Emissao/Principal';
+            });
+
+            //Preenchergrid();
+
+        });
+
+        function ExcluirApolice() {
+            var id = $('#grid .trSelected').attr('id').replace('row', '');
+
+            var formJson = { 'id': id };
+
+            $.ajax({
+                url: "/Emissao/ExcluirApolice",
+                type: "POST",
+                dataType: "json",
+                global: false,
+                contentType: "application/json; charset=utf-8;",
+                data: JSON.stringify(formJson),
+                async: false,
+                success: function (data) {
+                    trataMensagemRetorno(data);
+
+                    if (data.Tipo != '0') {
+                        Preenchergrid();
+                    }
+                }
+            });
+
+        }
+
+        function Preenchergrid(newp) {
+            var oColunas = [{ display: 'Estipulante/Segurado', name: 'DsEstipulanteSegurado', width: 260, sortable: true, align: 'left', process: abrirTelaPrincipal },
+                            { display: 'Proposta', name: 'NrPropostaApolice', width: 75, sortable: true, align: 'left', process: abrirTelaPrincipal },
+                            { display: 'Apólice', name: 'NrApoliceOficial', width: 75, sortable: true, align: 'left', process: abrirTelaPrincipal },
+                            { display: 'Programa', name: 'DsPrograma', width: 184, sortable: true, align: 'left', process: abrirTelaPrincipal },
+                            { display: 'Data Emissão', name: 'DtEmissao', width: 75, sortable: true, align: 'left', process: abrirTelaPrincipal },
+                            { display: 'Vigencia', name: 'DtVigenciaInicial', width: 120, sortable: true, align: 'left', process: abrirTelaPrincipal },
+                            { display: 'Prêmio Total', name: 'VlPremioPraticado', width: 75, sortable: true, align: 'left', process: abrirTelaPrincipal },
+                            { display: 'Documentos', name: 'Documentos', width: 75, sortable: true, align: 'center', textButton: 'Gerar', ColumnButton: 'Documentos', FunctionButton: 'DialogDownLoadDocumentos', Icon: 'ui-icon-gear'}];
+
+            var params = $('#frmPesquisaEmissao').formToJsonFlexGrid();
+
+            var config = { url: "/Emissao/PesquisarApolices",
+                metodo: 'POST',
+                //ordemPadrao: '',
+                titulo: '',
+                width: 1030,
+                height: 331,
+                colunas: oColunas,
+                cursorIcon: '1',
+                newp: newp
+            };
+
+            carregarGrid('#grid', params, config);
+        };
+
+        function DialogDownLoadDocumentos() {
+            var id = $(this).attr('id').replace('btn_row', '');
+
+            ConsultaStatusApolice(id);
+            if ($('#CdStatus').val() == 'A' || $('#CdStatus').val() == 'L') {
+                var formJson = {
+                    'id': id,
+                    CdOrigem: 1
+                };
+
+                showDialogDownloadDocs(formJson);
+            }
+            else {
+                growlError('A Apólice deve estar ativa para realizar esta ação.');
+            }
+        }
+
+        function abrirTelaPrincipal(celDiv, id) {
+            $(celDiv).dblclick(function () {
+                var link = '/Emissao/Principal'
+                link = link + '?id=' + id;
+                $(location).attr('href', link);
+            });
+        }
+
+        function ConsultaStatusApolice(id) {
+            var formJson = { 'id': id };
+
+            $.ajax({
+                url: "/Emissao/ConsultaStatusApolice",
+                type: "POST",
+                dataType: "json",
+                global: false,
+                contentType: "application/json; charset=utf-8;",
+                data: JSON.stringify(formJson),
+                async: false,
+                success: function (data) {
+
+                    $('#CdStatus').val(data.CdStatus);
+
+                }
+            });
+        }
+         
+    </script>
+    
+
+</head>
+<body>
+    <div id="container">
+        <div id="container_menu">
+            <div id="menu">
+    <ul class="menu">
+
+            <li><a href="#" class="parent"><span>Cadastro</span></a>
+                <div><ul class="">
+                    <li><a href="/Cobertura" class="parent"><span>Coberturas Susep</span></a></li>
+                    <li><a href="/GrupoRamo" class="parent"><span>Grupo Ramo Susep</span></a></li>
+                    <li><a href="/ParticipanteCessao"><span>Participante Cessão</span></a></li>
+                    <li><a href="/Produto"><span>Produto</span></a></li>
+                    <li><a href="/Plano"><span>Plano de Cessão</span></a></li>
+                    <!--<li><a href="/Programa" class="parent"><span>Programa</span></a></li>-->
+                </ul></div>
+            </li>
+    
+            <li><a href="#" class="parent"><span>Emissão</span></a>
+                <div><ul class="">
+                        <li><a href="/Emissao"><span>Apólice</span></a></li>
+                        <li><a href="/Endosso"><span>Endosso</span></a></li>
+                        <li><a href="/Fatura"><span>Fatura</span></a></li>
+                     </ul>
+                </div>
+            </li>                
+
+       <li><a href="/Cessao"><span>Cessão</span></a></li>
+  
+            <li><a href="#" class="parent"><span>Tesouraria</span></a>
+                <div><ul class="">
+                        <li><a href="/BaixaManual"><span>Baixa Manual</span></a></li>
+                        <li><a href="/BaixaCongenere"><span>Baixa Cosseguro Aceito</span></a></li>
+                        <li><a href="/Bordero"><span>Ordem de Pagamento</span></a></li>
+                        <li><a href="/Cotacao"><span>Cotação</span></a></li> 
+                        <li><a href="/MovimentoCaixa"><span>Movimento de Caixa</span></a></li>                       
+                     </ul>
+                </div>
+            </li>             
+
+            <li><a href="#" class="parent"><span>Fechamento</span></a>
+                <div><ul class="">
+                        <li><a href="/Fechamento" class="parent"><span>Registro Oficial</span></a></li>
+                        <li><a href="/Fechamento/Cosseguro" class="parent"><span>Distribuição de Cosseguro</span></a></li>
+                        <li><a href="/Fechamento/Susep" class="parent"><span>Circular 360</span></a></li>
+                        <li><a href="/Fechamento/Quadros" class="parent"><span>Quadros Estatísticos</span></a></li>
+                     </ul>
+                </div>            
+            </li>            
+
+
+    <li><a href="#" class="parent"><span>Sinistro</span></a>
+        <div><ul class="">
+                <li><a href="/Sinistro" class="parent"><span>Registro Oficial</span></a></li>
+                <li><a href="/Sinistro/Relatorio" class="parent"><span>Relatório Sinistro</span></a></li>
+                <li><a href="/Sinistro/FechamentoMensal" class="parent"><span>Fechamento Mensal</span></a></li>
+                </ul>
+        </div>            
+    </li>   
+
+    <!-- li para "printar" a img de separação-->
+    <li><span><a href="#">&nbsp;</a></span></li>
+    </ul>
+</div> 
+<div class="clear"></div>
+        </div>
+        <div id="container_body">
+         <div id="title">
+            <h3>
+                
+    Consulta Emiss&#227;o
+
+            </h3>
+         </div>
+                    
+
+
+
+
+
+<div class="frame">
+    <input type="hidden" id="CdStatus" />
+    <h4>Pesquisa</h4>
+    <form id="frmPesquisaEmissao" action="#" >
+        <div class="cell"> 
+            <label for="Sucursal">Sucursal</label>    
+            <select class="w300 requerid" id="DdlSucursal" name="DdlSucursal"><option value="">Selecione</option>
+<option value="1">1 - S&#227;o Paulo</option>
+<option value="2">2 - S&#227;o Paulo - PE</option>
+<option value="3">3 - Group Life</option>
+<option value="4">4 - Massificados</option>
+<option value="5">5 - Massificados QBE</option>
+<option value="6">6 - S&#227;o Paulo - RP</option>
+<option value="7">7 - Massificados Outros</option>
+<option value="8">8 - GLOBAL CLIENTS</option>
+<option value="9">9 - ANIMAIS</option>
+</select>
+        </div>
+        <div class="cell"> 
+            <label for="Ramo">Ramo</label>    
+            <select class="w300 requerid" id="DdlRamo" name="DdlRamo"><option value="">Selecione</option>
+<option value="1">1 - Roubo</option>
+<option value="2">2 - Furto Qualificado</option>
+<option value="10">10 - RC ADMINISTRADORES DIRETORES</option>
+<option value="13">13 - RC RISCOS AMBIENTAIS</option>
+<option value="14">14 - Multirisco Residencial</option>
+<option value="15">15 - Roubo</option>
+<option value="21">21 - TRANSPORTE NACIONAL</option>
+<option value="40">40 - GARANTIA DE OBRIGA&#199;&#213;ES PRIVADA</option>
+<option value="46">46 - FIAN&#199;A LOCATICIA</option>
+<option value="51">51 - R.C. GERAL</option>
+<option value="55">55 - RCF-DC</option>
+<option value="64">64 - ANIMAIS</option>
+<option value="69">69 - Viagem</option>
+<option value="71">71 - RISCOS DIVERSOS</option>
+<option value="75">75 - GARANITA SETOR PUBLICO</option>
+<option value="77">77 - PERDA FINANCEIRA</option>
+<option value="78">78 - RC PROFISSIONAL</option>
+<option value="82">82 - AP</option>
+<option value="90">90 - Renda de Eventos Aleat&#243;rios</option>
+<option value="93">93 - VG</option>
+<option value="95">95 - GARANTIA ESTENDIDA PATRIMONIAL</option>
+<option value="97">97 - VG/APC</option>
+</select>       
+        </div>
+        <div class="cell"> 
+            <label for="ddlEstipulantes">Estipulante/Segurado</label>
+            <select class="w350" id="DdlEstipulante" name="DdlEstipulante"><option value="">Selecione</option>
+<option value="1297">.</option>
+<option value="23501">.</option>
+<option value="25873"> JULIA COSER SERAPHIM</option><option value="18203">77 TRANSPORTES E REPRESENTACAO LTDA</option>
+<option value="23096">8 TABELIONATO DE NOTAS DA CAPITAL</option>
+</select>
+        </div>
+        <div class="clear"></div>
+        <div class="cell"> 
+            <label for="Apolice">N&#250;mero Ap&#243;lice</label>           
+            <input MaxLength="25" class="w150" id="NrApolice" name="NrApolice" onKeyPress="return NumberOnly(this, event)" type="text" value="" />
+        </div>        
+        <div class="cell"> 
+            <label for="DataInicial">Per&#237;odo Emiss&#227;o</label>           
+            <input class="w75" id="DtEmissaoInicial" name="DtEmissaoInicial" type="text" value="" />  até <input class="w75" id="DtEmissaoFinal" name="DtEmissaoFinal" type="text" value="" />
+        </div>
+        <div class="cell"> 
+            <label for="DataInicial">CPF/CNPJ</label> 
+            <input class="w100" id="NrCpfCnpj" name="NrCpfCnpj" type="text" value="" />
+        </div>
+
+        <div class="button-bar-inline-right">
+            <button type="button" id="btnPesquisar">Pesquisar</button>
+            <button type="button" id="btnNovaApolice">Nova Apolice</button>
+            <button type="button" id="btnExcluir">Excluir</button>
+        </div>
+        <div class="clear"></div>
+    </form>
+</div>
+<div class="frameResultado">
+    <table id="grid"></table>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(
+        function () {
+            $('#divDownloadDocumentos,#divSubestipulante').hide();
+
+            $('#btnBaixar').button({
+                icons: {
+                    primary: "ui-icon-arrowthickstop-1-s"
+                },
+                text: true
+            }).click(function () {
+                BaixarBoletos();
+            });
+
+            $('#fieldsetSubestipulantes').width('135').height('208');
+
+        });
+
+    function showDialogDownloadDocs(model) {
+
+        $("#NrPropEndos").val(model.NrPropEndos);
+        $("#NrPropApolice").val(model.NrPropApolice);
+        $("#CdSucursal").val(model.CdSucursal);
+        $("#CdRamo").val(model.CdRamo);
+        $("#id").val(model.id);
+        $("#CdOrigem").val(model.CdOrigem);
+
+        $("#divDownloadDocumentos").dialog({
+            modal: true,
+            width: 209,
+            height: 310,
+            resizable: false,
+            position: 'Center',
+            close: function (event, ui) {//limpa o formulário qdo fechar
+
+                $('#frmDownloadDocs').find('input[type=checkbox]').each(function () {
+                    $(this).attr('checked', 'checked');
+                });
+            }
+        });
+    }
+
+    function showDialogDownloadDocsSubestipulantes() {
+        $("#divDownloadDocumentos").dialog({
+            modal: true,
+            width: 400,
+            height: 330,
+            resizable: false,
+            position: 'Center',
+            close: function (event, ui) {//limpa o formulário qdo fechar
+
+                $('#frmDownloadDocs').find('input[type=checkbox]').each(function () {
+                    $(this).attr('checked', 'checked');
+                });
+            }
+        });
+        $("#divSubestipulante").show();
+    }
+
+    function BaixarBoletos() {
+        var param = {
+            NrPropEndos: $('#NrPropEndos').val(),
+            NrPropApolice: $('#NrPropApolice').val(),
+            CdSucursal: $('#CdSucursal').val(),
+            CdRamo: $('#CdRamo').val(),
+            id: $('#id').val(),
+            CdOrigem: $("#CdOrigem").val(),
+            FlFrontSpicio: $('#Frontispicio').attr('checked') == 'checked',
+            FlCondicoesGerais: $('#CondGerais').attr('checked') == 'checked',
+            FlCondicoesEspeciais: $('#CondEspeciais').attr('checked') == 'checked',
+            FlCondicoesParticulares: $('#CondicoesParticulares').attr('checked') == 'checked',
+            FlBoletos: $('#Boletos').attr('checked') == 'checked'
+        };
+
+        var link = '/Impressao/BaixarDocumentos';
+
+        link = link + '?NrPropEndos=' + param.NrPropEndos;
+        link = link + '&NrPropApolice=' + param.NrPropApolice;
+        link = link + '&CdSucursal=' + param.CdSucursal;
+        link = link + '&CdRamo=' + param.CdRamo;
+        link = link + '&id=' + param.id;
+        link = link + '&CdOrigem=' + param.CdOrigem;
+        link = link + '&TipoDocumento=' + param.FlFrontSpicio;
+        link = link + '&FlFrontSpicio=' + param.FlFrontSpicio;
+        link = link + '&FlCondicoesGerais=' + param.FlCondicoesGerais;
+        link = link + '&FlCondicoesEspeciais=' + param.FlCondicoesEspeciais;
+        link = link + '&FlCondicoesParticulares=' + param.FlCondicoesParticulares;
+        link = link + '&FlBoletos=' + param.FlBoletos;
+
+        $(location).attr('href', link);
+
+    }
+
+
+  
+  </script>
+ <div id="divDownloadDocumentos" title="Obter documentos da apólice">     
+    <input type="hidden" id="NrPropEndos" />
+    <input type="hidden" id="NrPropApolice" />
+    <input type="hidden" id="CdSucursal" />
+    <input type="hidden" id="CdRamo" />
+    <input type="hidden" id="id" />
+    <input type="hidden" id="CdOrigem" />
+        
+     <form action="#" id="frmDownloadDocs">
+     <div class="cell-wizard-margin">
+        <fieldset id="fieldsetArquivos">
+         <legend>Arquivos</legend>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="Frontispicio" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Frontispício</span>
+         </div>
+         <div class="clear"></div>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="CondGerais" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Condições Gerais</span> 
+         </div>
+         <div class="clear"></div>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="CondEspeciais" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Condições Especiais</span>
+         </div>
+         <div class="clear"></div>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="CondicoesParticulares" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Condições Particulares</span>
+         </div>
+         <div class="clear"></div>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="Boletos" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Boletos</span>
+         </div>                                       
+                   
+         <div class="clear"></div>    
+         <div class="clear"></div>              
+        </fieldset>
+    </div>
+    <div class="cell-wizard" id="divSubestipulante">
+        <fieldset id="fieldsetSubestipulantes" >
+         <legend>Subestipulantes</legend>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="Subestipulante01" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Subestipulante01</span>
+         </div>
+         <div class="clear"></div>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="Subestipulante02" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Subestipulante02</span>
+         </div>
+         <div class="clear"></div>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="Subestipulante03" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Subestipulante03</span>
+         </div>
+         <div class="clear"></div>
+         <div class="cell-dialog"> 
+            <input type="checkbox" id="Subestipulante04" class="checkBoxNormal preserveState" checked="checked" />
+            <span class="labelCheckBox">Subestipulante04</span>
+         </div>
+         <div class="clear"></div>
+         <div class="clear"></div>              
+        </fieldset>
+        </div>
+        <div class="clear"></div>
+        <div class="buttonBarRight">
+            <button id="btnBaixar" type="button" class="preserveState">Baixar</button>
+        </div>   
+    </form>
+   </div>
+
+        </div>
+    </div>
+</body>
+</html>

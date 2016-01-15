@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="Content/kendo/2013.3.1119/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/kendo/2013.3.1119/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/kendo/2013.3.1119/jquery.min.js" type="text/javascript"></script>
+    <!--script src="Scripts/jquery-1.9.1.min.js" type="text/javascript"></script-->
+    <script src="Scripts/kendo/2013.3.1119/kendo.all.min.js" type="text/javascript"></script>
+    <script src="Scripts/kendo/2013.3.1119/cultures/kendo.culture.pt-BR.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            kendo.culture("pt-BR");
+
+            $.ajax({
+                type: "get",
+                contentType: "application/json",
+//                url: "agenda/" + document.getElementById('NrSinistro').value + "$" + document.getElementById('TxtSegurado').value + "$" + document.getElementById('NrSeguro').value + "$" + document.getElementById('NrApolice').value + "$" + document.getElementById('DtEmissaoInicial').value.replace(/\//g, '') + "$" + document.getElementById('DtEmissaoFinal').value.replace(/\//g, ''),
+                url: "agenda",
+                data: "{}",
+                dataType: 'json',
+                success: function (result) {
+                    //add data
+                    //                    $("#scheduler").data = formatResults(result);
+                    $("#scheduler").data = eval('( { id: 241, start: new Date("12/12/2013 08:00 AM"), end: new Date("12/12/2013 09:00 AM"), title: "axy", description: "Alessandro Neves", ownerId: "311" } )')
+                }
+            });
+
+        });
+
+        function formatResults(agenda) {
+
+            var str = JSON.stringify(agenda);
+
+            var str = str.replace(/"/g, "");
+            var str = str.replace(/\(\\/g, "(\"");
+            var str = str.replace(/\\\)/g, "\")");
+            var str = str.replace(/title:/g, "title:\"");
+            var str = str.replace(/,description:/g, "\",description:\"");
+            var str = str.replace(/,ownerId:/g, "\",ownerId:");
+            alert(str);
+            return eval('(' + str + ')');
+            //                var rows = Array();
+
+            //                for (i = 0; i < Sinistro.length; i++) {
+            //                    var item = Sinistro[i];
+            //                    rows.push({ cell: [item.ID_SINISTRO, item.NR_SINISTRO, item.DS_CLIENTE, ''] });
+            //                }
+            //                return { total: Sinistro.length, page: 1, rows: rows }
+        }
+
+    </script>
+
+</head>
+<body>
+    <div id="example" class="k-content">
+    <div id="people">
+        <input checked type="checkbox" id="alex" value="1">
+        <input checked type="checkbox" id="bob" value="2">
+        <input type="checkbox" id="charlie" value="3">
+    </div>
+    <div id="scheduler"></div>
+</div>
+<script>
+    $(function () {
+        $("#scheduler").kendoScheduler({
+            date: new Date("2013/12/11"),
+            startTime: new Date("2013/12/11 07:00 AM"),
+            height: 600,
+            views: [
+            "week",
+            { type: "agenda", selected: true }
+        ],
+
+            messages: {
+                views: {
+                    week: "Semana",
+                    month: "Mês"
+                }
+            },
+
+//            timezone: "Etc/UTC",
+            dataSource: [
+            {
+                start: new Date('2013/12/12 08:00 AM'),
+                end: new Date('2013/12/12 09:00 AM'),
+                title: "Breakfast"
+            }],
+//            dataSource: {
+//                batch: true,
+//                transport: {
+//                    read: {
+//                        url: "agenda",
+//                        dataType: "json"
+//                    }//,
+//                    parameterMap: function (options, operation) {
+//                        if (operation !== "read" && options.models) {
+//                            return { models: kendo.stringify(options.models) };
+//                        }
+//                    }
+//                },
+//                schema: {
+//                    model: {
+//                        id: "ID_SINISTRO",
+//                        fields: {
+//                            taskId: { from: "ID_SINISTRO", type: "number" },
+//                            title: { from: "ds_comentarios", defaultValue: "No title", validation: { required: true} },
+//                            start: { type: "date", from: "dt_proxrevisao" },
+//                            end: { type: "date", from: "dt_proxrevisao" },
+//                            description: { from: "ds_usuario" },
+//                            ownerId: { from: "ds_usuario", defaultValue: 1 }
+//                        }
+//                    }
+//                }//,
+//                filter: {
+//                    logic: "or",
+//                    filters: [
+//                    { field: "ds_usuario", operator: "eq", value: 1 },
+//                    { field: "ds_usuario", operator: "eq", value: 2 }
+//                ]
+//                }
+//            }//,
+//            resources: [
+//            {
+//                field: "ds_usuario",
+//                title: "Owner",
+//                dataSource: [
+//                    { text: "Alex", value: 1, color: "#f8a398" },
+//                    { text: "Bob", value: 2, color: "#51a0ed" },
+//                    { text: "Charlie", value: 3, color: "#56ca85" }
+//                ]
+//            }
+//        ]
+        });
+
+        $("#people :checkbox").change(function (e) {
+            var checked = $.map($("#people :checked"), function (checkbox) {
+                return parseInt($(checkbox).val());
+            });
+
+            var filter = {
+                logic: "or",
+                filters: $.map(checked, function (value) {
+                    return {
+                        operator: "eq",
+                        field: "ownerId",
+                        value: value
+                    };
+                })
+            };
+
+            var scheduler = $("#scheduler").data("kendoScheduler");
+
+//            scheduler.dataSource.filter(filter);
+        });
+    });
+</script>
+<style scoped>
+
+.k-nav-current > .k-link span + span {
+    max-width: 200px;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+#people {
+    background: url('../../content/web/scheduler/team-schedule.png') transparent no-repeat;
+    height: 115px;
+    position: relative;
+}
+#alex {
+    position: absolute;
+    left: 404px;
+    top: 81px;
+}
+#bob {
+    position: absolute;
+    left: 519px;
+    top: 81px;
+}
+#charlie {
+    position: absolute;
+    left: 634px;
+    top: 81px;
+}
+</style>
+
+
+</body>
+</html>

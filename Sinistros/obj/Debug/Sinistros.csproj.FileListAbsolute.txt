@@ -1,0 +1,97 @@
+D:\TSI\qbe\Sinistros\Sinistros\bin\Sinistros.dll
+D:\TSI\qbe\Sinistros\Sinistros\bin\Sinistros.pdb
+D:\TSI\qbe\Sinistros\Sinistros\bin\Microsoft.Web.Infrastructure.dll
+D:\TSI\qbe\Sinistros\Sinistros\bin\Newtonsoft.Json.dll
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Net.Http.dll
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Net.Http.Formatting.dll
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Net.Http.WebRequest.dll
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Web.Http.dll
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Web.Http.WebHost.dll
+D:\TSI\qbe\Sinistros\Sinistros\bin\Newtonsoft.Json.xml
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Net.Http.xml
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Net.Http.Formatting.xml
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Net.Http.WebRequest.xml
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Web.Http.xml
+D:\TSI\qbe\Sinistros\Sinistros\bin\System.Web.Http.WebHost.xml
+D:\TSI\qbe\Sinistros\Sinistros\obj\Debug\ResolveAssemblyReference.cache
+D:\TSI\qbe\Sinistros\Sinistros\obj\Debug\Sinistros.dll
+D:\TSI\qbe\Sinistros\Sinistros\obj\Debug\Sinistros.pdb
+D:\TSI\qbe\Sinistros\Sinistros\bin\Oracle.DataAccess.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\Sinistros.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\Sinistros.pdb
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\Newtonsoft.Json.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Net.Http.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Net.Http.Formatting.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Net.Http.WebRequest.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Web.Http.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Web.Http.WebHost.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\Newtonsoft.Json.xml
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Net.Http.xml
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Net.Http.Formatting.xml
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Net.Http.WebRequest.xml
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Web.Http.xml
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\System.Web.Http.WebHost.xml
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\obj\Debug\Sinistros.csprojResolveAssemblyReference.cache
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\obj\Debug\Sinistros.dll
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\obj\Debug\Sinistros.pdb
+C:\Users\Angelo\Documents\My Dropbox\Projetos\QBE\Sinistro\SinistrosWeb\Sinistros\bin\Oracle.DataAccess.dll
+D:\TSI\homolog\SinistrosWeb\Sinistros\bin\Sinistros.dll
+D:\TSI\homolog\SinistrosWeb\Sinistros\bin\Microsoft.Web.Infrastructure.dll
+D:\TSI\homolog\SinistrosWeb\Sinistros\bin\Newtonsoft.Json.dll
+D:\TSI\homolog\SinistrosWeb\Sinistros\bin\Newtonsoft.Json.xml
+D:\TSI\homolog\SinistrosWeb\Sinistros\obj\Debug\ResolveAssemblyReference.cache
+D:\TSI\homolog\SinistrosWeb\Sinistros\obj\Debug\Sinistros.dll
+D:\TSI\homolog\SinistrosWeb\Sinistros\obj\Debug\Sinistros.pdb
+D:\TSI\homolog\SinistrosWeb\Sinistros\bin\Sinistros.pdb
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\Sinistros.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\Sinistros.pdb
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\Newtonsoft.Json.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\Oracle.DataAccess.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Net.Http.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Net.Http.Formatting.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Net.Http.WebRequest.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Web.Http.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Web.Http.WebHost.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\Newtonsoft.Json.xml
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Net.Http.xml
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Net.Http.Formatting.xml
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Net.Http.WebRequest.xml
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Web.Http.xml
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\bin\System.Web.Http.WebHost.xml
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\obj\Debug\Sinistros.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\obj\Debug\Sinistros.dll
+C:\Users\Felipe\Desktop\Felipe - temp\SinistrosWeb\Sinistros\obj\Debug\Sinistros.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\Sinistros.dll.config
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\Sinistros.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\Sinistros.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\Newtonsoft.Json.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\Oracle.DataAccess.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Net.Http.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Net.Http.Formatting.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Net.Http.WebRequest.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Http.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Http.WebHost.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\Newtonsoft.Json.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Net.Http.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Net.Http.Formatting.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Net.Http.WebRequest.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Http.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Http.WebHost.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\obj\Debug\Sinistros.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\obj\Debug\Sinistros.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\obj\Debug\Sinistros.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Helpers.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Mvc.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Razor.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.WebPages.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.WebPages.Razor.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Helpers.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Mvc.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.Razor.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.WebPages.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\SinistrosWeb\Sinistros\bin\System.Web.WebPages.Razor.xml

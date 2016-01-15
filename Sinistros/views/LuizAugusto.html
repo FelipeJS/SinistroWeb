@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulário</title>
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="LuizAugusto.css">
+</head>
+<body>
+	<div class="container">
+		<div class="formulario">
+			<div class="form_cadastro">
+			<div class="conteudo_topo">
+				<div class="titulo">
+					<h3>Cadastro de Usuário</h3>
+				</div>	
+			</div>				
+				<!-- primeiro formuláro -->
+				<div class="conteudo_fm">			
+					<table>
+						<tr>
+							<td >ID</td>
+							<td class="option">Login</td>
+							<td class="option">Peril Usuário</td>
+							<td class="option">Nome</td>
+						</tr>
+					</table>
+					<form class="formulario" name="form_1">
+						<label>Login: </label><input class="form_control" name="login" type="text"/>
+						<label>Perfil de acesso: </label><select class="form_control" name="select_acss">
+															  <option class="form_control" value="Analise Sinistro">Analise Sinistro</option>
+															  <option class="form_control" value="saab">Saab</option>
+															  <option class="form_control" value="mercedes">Mercedes</option>
+															  <option class="form_control" value="audi">Audi</option>
+															</select> 
+						<label>Nome: <input class="form_control" name="nome" type="text"/>
+						<button class="btn" name="busca"><i class="fa fa-search"></i> Busca</button>
+						<button class="btn" name="limpar">Limpar</button>
+						<button class="btn" name="gravar"><i class="fa fa-upload"></i> Gravar</button>
+						<button class="btn" name="fechar">Fechar</button>
+					</form>
+				</div>
+			</div>
+			<div class="user-information">
+				<!-- Segundo Formulário -->
+				<div class="conteudo_fm">
+					<table>
+						<tr>
+							<td>E-mail</td>
+							<td class="option">Matricula</td>
+							<td class="option">Vigente</td>
+						</tr>
+					</table>
+					<form name="form_2">
+						<label>Email: </label><input class="form_control" name="email" type="text"/>
+						<label>Matrícula: </label><input class="form_control" name="matrícula" type="number"/>
+						<label>Senha: </label><input class="form_control" name="senha" type="password"/>
+						<label>Reiniciar Senha: </label><select class="form_control" name="select_rsenha">
+															<option>Sim</option>
+															<option>Não</option>
+														</select>
+						<label>Vigente: </label><select class="form_control" name="select_vig">
+													<option>Sim</option>
+													<option>Não</option>
+												</select>
+						<input class="btn" name="sub_form2" value="Adicionar" type="submit"/>
+					</form>
+				</div>
+				<!-- terceiro formulário -->
+				<div class="conteudo_fm">
+					<table>
+						<tr>
+							<td>Fone/Ramal</td>
+							<td class="option">Data de Cadastro</td>
+							<td class="option">Tipo</td>
+							<td class="option">Nível</td>
+							<td class="option">Status</td>
+						</tr>
+					</table>
+					<form name="form_3">
+						<label>Fone/Ramal: </label><input class="form_control" name="fone" type="number"/>
+						<label>Data de Cadastro </label><input class="form_control" name="data" type="date"/>
+						<label>Tipo: </label><select class="form_control" name="selec_tipo">
+												<option>1</option>
+												<option>2</option>
+											  </select>
+						<label>Nível: </label><select class="form_control" name="select_nivel">
+												<option>1</option>
+												<option>2</option>
+											  </select>
+						<label>Status: </label><select class="form_control" name="select_status">
+												<option>A</option>
+												<option>B</option>
+											  </select>
+						<input class="btn" name="sub_form3" value="Adicionar" type="submit"/>
+					</form>
+				</div>
+				<!-- Quarto Formulário -->
+				<div class="conteudo_fm">
+					<table>
+						<tr>
+							<td>ID Usuário Pai</td>
+							<td class="option">Valor Idenização</td>
+							<td class="option">Valor Despesas</td>
+							<td class="option">Valor Onorário</td>
+						</tr>
+					</table>
+					<form name="form_4">
+						<label>ID Usuário Pai: </label><input class="form_control" name="user_pai" placeholder="00,00" type="number"/>
+						<label>Valor Idenização: </label><input class="form_control" name="val_ind" placeholder="00,00" type="number"/>
+						<label>Valor Despesas: </label><input class="form_control" name="val_des" placeholder="00,00" type="number"/>
+						<label>Valor Onorários: </label><input class="form_control" name="val_ono" placeholder="00,00" type="number"/>
+						<input class="btn" name="sub_form4" value="Adicionar" type="submit"/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

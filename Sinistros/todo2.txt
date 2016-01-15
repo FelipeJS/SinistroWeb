@@ -1,0 +1,33 @@
+
+- Ajuste Manual
+- Aviso Reservas
+- Gravar Beneficiário
+- Fechar Sinistro Sem Indenização
+- Reabertura
+
+- Gravar Ordem de Pagamento
+- Autorizaçao pagamentos
+- Gerar arquivos de pagamentos
+- Gravar comentários
+
+- Atualizar Dados de Segurado
+
+- Ver fechado sem indenização
+- Editar Agenda
+- Processamento de arquivo resposta
+
+
+D – 319111100002
+C – 119310000002
+ 
+
+txtDtPagto
+txtVlPagto
+txtValorAjuste
+txtParticipacao
+txtValorLiquidacao
+
+
+4.       Abertura de sinistro com imagem - 
+5.       Regulação sinistro (com as características da  planilha excel)
+
